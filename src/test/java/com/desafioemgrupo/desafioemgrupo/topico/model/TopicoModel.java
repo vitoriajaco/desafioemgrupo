@@ -1,4 +1,4 @@
-package com.desafioemgrupo.desafioemgrupo.topico;
+package com.desafioemgrupo.desafioemgrupo.topico.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

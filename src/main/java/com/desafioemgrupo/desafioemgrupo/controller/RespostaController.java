@@ -33,10 +33,10 @@ public class RespostaController {
     @GetMapping(path = "/{idResposta}")
     ResponseEntity<Optional<RespostaModel>> buscarPorId(@PathVariable Long idResposta) {
         return ResponseEntity.ok(respostaService.buscarPorId(idResposta));
-    }
+        }
 
     @GetMapping(path = "/status/{status}")
-    public ResponseEntity<List<RespostaModel>> findByStatus(Status status) {
+    public ResponseEntity<List<RespostaModel>> findByStatus(@PathVariable Status status) {
         return ResponseEntity.ok(respostaService.findByStatus(status));
     }
 

@@ -21,4 +21,7 @@ public class ModelUsuario {
     private String email;
     @Column
     private String senha;
-}
+
+
+    }
+

@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -39,12 +38,13 @@ public class ControllerCurso {
     public ResponseEntity<ModelCurso> buscarPorID(@PathVariable Long id) {
         return ResponseEntity.ok(serviceCurso.buscarPorId(id));
     }
+
     @GetMapping
     public ResponseEntity<List<ModelCurso>> buscarTodos() {
         return ResponseEntity.ok(serviceCurso.buscarTodos());
     }
 
-    @GetMapping(path = "/categorias/{categoria}")
+    @GetMapping(path = "/categorias/{categorias}")
     public ResponseEntity<List<ModelCurso>> findByTipoContas(@PathVariable EnumCategorias categorias) {
         return ResponseEntity.ok(serviceCurso.findByTipoContas(categorias));
     }

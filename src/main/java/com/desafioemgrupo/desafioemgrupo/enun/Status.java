@@ -4,5 +4,5 @@ public enum Status {
     nao_respondido,
     nao_solucionado,
     solucionado,
-    fechado
+    fechado;
 }

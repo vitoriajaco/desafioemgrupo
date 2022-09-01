@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface RespostaRepository extends JpaRepository<RespostaModel, Long>{
-    List<RespostaModel> findByStatus(Status status);
+    public List<RespostaModel> findByStatus(Status status);
 
 }

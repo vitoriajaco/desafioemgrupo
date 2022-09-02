@@ -22,11 +22,19 @@ public class RespostaService {
         return respostaRepository.save(respostaModel);
     }
 
-    public RespostaModel alterar(RespostaModel respostaModel, Long id) {
-        respostaModel.getStatus();
-
-
-        return respostaRepository.save(respostaModel);
+    public RespostaModel alterar(Long id, RespostaModel respostaModel) {
+Optional<RespostaModel> optionalRespostaModel = respostaRepository.findById(id);
+        if (optionalRespostaModel.isEmpty()) {
+            throw new RuntimeException("este registro não existe");
+        }
+        RespostaModel respostaEncontrada = optionalRespostaModel.get();
+        if (optionalRespostaModel.isPresent()) {
+        String mensagemInformada = respostaModel.getMensagem();
+        respostaEncontrada.setMensagem(mensagemInformada);
+        Status statusInformado = respostaModel.getStatus();
+        respostaEncontrada.setStatus(statusInformado);
+        }
+        return respostaRepository.save(respostaEncontrada);
     }
 
     public Optional<RespostaModel> buscarPorId(Long id) {

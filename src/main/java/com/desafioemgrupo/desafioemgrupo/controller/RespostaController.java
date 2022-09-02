@@ -40,9 +40,9 @@ public class RespostaController {
         return ResponseEntity.ok(respostaService.findByStatus(status));
     }
 
-    @PutMapping(path = "/{idResposta}")
-    public ResponseEntity<RespostaModel> alterarResposta(@RequestBody RespostaModel respostaModel, @PathVariable long idResposta) {
-        return ResponseEntity.ok(respostaService.alterar(respostaModel, idResposta));
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<RespostaModel> alterarResposta(@PathVariable Long id, @RequestBody RespostaModel respostaModel) {
+        return ResponseEntity.ok(respostaService.alterar(id, respostaModel));
     }
 
     @DeleteMapping("/{idResposta}")

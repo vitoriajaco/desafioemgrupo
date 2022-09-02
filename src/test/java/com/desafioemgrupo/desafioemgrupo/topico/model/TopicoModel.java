@@ -1,16 +1,14 @@
 package com.desafioemgrupo.desafioemgrupo.topico.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Data
 @Getter
-@Table(name = "Topico")
+@Setter
+@Table(name = "topico")
 @AllArgsConstructor
 @NoArgsConstructor
 public class TopicoModel {
@@ -18,7 +16,7 @@ public class TopicoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Long id;
     @Column
     private String titulo;
     @Column

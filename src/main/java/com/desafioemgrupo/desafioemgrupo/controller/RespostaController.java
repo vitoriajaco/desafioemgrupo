@@ -41,8 +41,8 @@ public class RespostaController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<RespostaModel> alterarResposta(@PathVariable Long id, @RequestBody RespostaModel respostaModel) {
-        return ResponseEntity.ok(respostaService.alterar(id, respostaModel));
+    public ResponseEntity<RespostaModel> alterarResposta(@PathVariable Long id, @RequestBody RespostaEntradaDTO entradaDTO) {
+        return ResponseEntity.ok(respostaService.alterar(id, entradaDTO.transformaParaObjeto()));
     }
 
     @DeleteMapping("/{idResposta}")
